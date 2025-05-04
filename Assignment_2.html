@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Activities - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="stocks.html">Stocks</a></li>
+            <li><a href="dogs.html">Dogs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Welcome to Class Activities</h1>
+        <p id="quote">Loading inspirational quote...</p>
+        
+        <div class="button-container">
+            <a href="stocks.html" class="custom-button stocks-button">Stocks</a>
+            <a href="dogs.html" class="custom-button dogs-button">Dogs</a>
+        </div>
+    </main>
+
+    <div class="audio-instructions">
+        <h3>Voice Commands</h3>
+        <p>Say "Hello" - Displays a greeting</p>
+        <p>Say "Change the color to [color]" - Changes background color</p>
+        <p>Say "Navigate to [page]" - Goes to specified page</p>
+        <div class="audio-controls">
+            <button id="turnOnAudio" class="audio-button">Turn On Audio</button>
+            <button id="turnOffAudio" class="audio-button">Turn Off Audio</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Fetch and display quote
+        fetch('https://zenquotes.io/api/random')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('quote').textContent = `"${data[0].q}" - ${data[0].a}`;
+            })
+            .catch(error => {
+                console.error('Error fetching quote:', error);
+                document.getElementById('quote').textContent = "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt";
+            });
+    </script>
+</body>
+</html>

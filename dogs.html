@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Activities - Dogs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-slider@1.0.0/dist/simple-slider.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stocks.html">Stocks</a></li>
+            <li class="active"><a href="dogs.html">Dogs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Dog Information</h1>
+        
+        <div class="dog-carousel">
+            <div id="dogImages" class="slider">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="dog-breeds-container">
+            <h2>Dog Breeds</h2>
+            <div id="breedButtons" class="breed-buttons">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div id="breedInfo" class="breed-info" style="display: none;">
+            <h3 id="breedName"></h3>
+            <p id="breedDescription"></p>
+            <p>Life Span: <span id="breedMinLife"></span> - <span id="breedMaxLife"></span> years</p>
+        </div>
+    </main>
+
+    <div class="audio-instructions">
+        <h3>Voice Commands</h3>
+        <p>Say "Hello" - Displays a greeting</p>
+        <p>Say "Change the color to [color]" - Changes background color</p>
+        <p>Say "Navigate to [page]" - Goes to specified page</p>
+        <p>Say "Load Dog Breed [breed name]" - Loads information about the specified breed</p>
+        <div class="audio-controls">
+            <button id="turnOnAudio" class="audio-button">Turn On Audio</button>
+            <button id="turnOffAudio" class="audio-button">Turn Off Audio</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="script.js"></script>
+    <script src="dogs.js"></script>
+</body>
+</html>
